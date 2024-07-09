@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetroLines.Views.OptionsPanel"
+             Title="">
+    <ScrollView Margin="5,0,5,0">
+        <VerticalStackLayout Spacing="10" VerticalOptions="Fill" HorizontalOptions="Fill">
+            <Label Text="Depending on your devices hardware, setting high values here may slow your device or cause it to overheat." FontSize="20" TextColor="Red" HorizontalOptions="Center"/>
+            <HorizontalStackLayout>
+                <Label Text="Points:" VerticalOptions="Center" />
+                <Entry Text="4" Keyboard="Numeric" ReturnType="Next" x:Name="PointCount" TextChanged="Points_Changed" Unfocused="Points_Unfocused" />
+                <Label Text="(1 - 100)" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Background:" VerticalOptions="Center" />
+                <Picker x:Name="BackgroundColorDDL" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Fill" VerticalOptions="Center"/>
+                <CheckBox IsChecked="False" CheckedChanged="Fill_Changed" x:Name="Fill"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout x:Name="OpacityPanel" Margin="40,0,0,0">
+                <Label Text="Fill Opacity:" VerticalOptions="Center" />
+                <Entry Text="0" Keyboard="Numeric" ReturnType="Next" x:Name="FillOpacity" TextChanged="Opacity_Changed" Unfocused="Opacity_Unfocused" />
+                <Label Text="% (0 - 100)" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="Trails:" VerticalOptions="Center" />
+                <Entry Text="100" Keyboard="Numeric" ReturnType="Next" x:Name="Trails" TextChanged="Trails_Changed" Unfocused="Trails_Unfocused" />
+                <Label Text="(0 - 1000)" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="LineThickness:" VerticalOptions="Center" />
+                <Entry Text="1" Keyboard="Numeric" ReturnType="Next" x:Name="LineThickness" TextChanged="LineThickness_Changed" Unfocused="LineThickness_Unfocused" />
+                <Label Text="(1 - 20)" VerticalOptions="Center" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Speed:" VerticalOptions="Center" />
+                <VerticalStackLayout Spacing="20" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="40,0,0,0">
+                    <HorizontalStackLayout>
+                        <Label Text="Linear:" VerticalOptions="Center" />
+                        <Entry Text="10" Keyboard="Numeric" ReturnType="Next" x:Name="LinearSpeed" TextChanged="LinearSpeed_Changed" Unfocused="LinearSpeed_Unfocused" />
+                        <Label Text="(1 - 500)" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout>
+                        <Label Text="Renders per second:" VerticalOptions="Center" />
+                        <Entry Text="10" Keyboard="Numeric" ReturnType="Next" x:Name="RenderSpeed" TextChanged="RenderSpeed_Changed" Unfocused="RenderSpeed_Unfocused" />
+                        <Label Text="(1 - 50)" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+            <HorizontalStackLayout Margin="20,0,0,0" HorizontalOptions="Center">
+                <Button Text="Save" Clicked="SaveButton_Clicked" x:Name="SaveButton"  Margin="0,0,80,0" />
+                <Button Text="Cancel" Clicked="CancelButton_Clicked" x:Name="CancelButton" />
+            </HorizontalStackLayout>
+        
+            <Button Text="Privacy Policy (Opens in browser)" Clicked="PrivacyPolicy_Clicked" x:Name="PrivacyPolicyButton" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

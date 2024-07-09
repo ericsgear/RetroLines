@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RetroLines.Views.MainPage">
+
+    <AbsoluteLayout Margin="0" x:Name="Canvas">
+        <AbsoluteLayout.GestureRecognizers>
+                <TapGestureRecognizer Tapped="ResetRender" NumberOfTapsRequired="1"/>
+                <TapGestureRecognizer Tapped="ShowOptions" NumberOfTapsRequired="2"/>
+            </AbsoluteLayout.GestureRecognizers>
+    </AbsoluteLayout>
+
+</ContentPage>
